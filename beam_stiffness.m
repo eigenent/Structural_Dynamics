@@ -39,19 +39,19 @@ nodes = str2double(answer3{1});
 nel = nodes - 1;
 L = Length/nel; % element length, assuming equal spacing
 
-%% local Kstiff for beam with 6dofs per node, 2 nodes
+%% Kstiff for beam with 6dofs per node, 2 nodes
 
 
 Kel= [E*A/L       0        0        0        0        0        -E*A/L        0        0        0        0        0;
         0    12*E*Iz/L^3   0        0        0   6*E*Iz/L^2       0   -12*E*Iy/L^3    0        0        0   6*E*Iz/L^2;
         0         0  12*E*Iy/L^3    0  -6*E*Iy/L^2    0           0          0  -12*E*Iy/L^3   0   -6*E*Iy/L^2   0;
-        0         0        0     G*J/L      0        0           0          0        0     -G*J/L     0        0;
+        0         0        0      G*J/L      0        0           0          0        0      -G*J/L     0        0;
         0         0  -6*E*Iy/L^2    0     4*E*Iy/L    0           0          0    6*E*Iy/L^2   0     2*E*Iy/L    0;
         0     6*E*Iz/L^2   0        0        0    4*E*Iz/L        0    -6*E*Iz/L^2    0        0       0      2*E*Iz/L;
       -E*A/L      0        0        0        0        0         E*A/L        0        0        0        0        0;
         0   -12*E*Iz/L^3   0        0        0  -6*E*Iz/L^2       0    12*E*Iy/L^3    0        0        0  -6*E*Iz/L^2;
         0         0 -12*E*Iy/L^3    0   6*E*Iy/L^2    0           0          0   12*E*Iy/L^3   0    6*E*Iy/L^2   0;
-        0         0        0    -G*J/L      0        0           0          0        0      G*J/L     0        0;
+        0         0        0     -G*J/L      0        0           0          0        0       G*J/L     0        0;
         0         0  -6*E*Iy/L^2    0     2*E*Iy/L    0           0          0    6*E*Iy/L^2   0     4*E*Iy/L    0;
         0     6*E*Iz/L^2   0        0        0    2*E*Iz/L        0    -6*E*Iz/L^2    0        0       0      4*E*Iz/L];
 
