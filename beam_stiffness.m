@@ -60,7 +60,7 @@ Kel= [E*A/L       0        0        0        0        0        -E*A/L        0  
 beam_dofs = 6*nodes;                       % 6 dofs per node, 3 translational, 3 rotational
 Kel_b = zeros(beam_dofs, beam_dofs, nel);  % this allows each element to position in the beam
 
-for el=1:7
+for el=1:nodes-1
    for i=1:12
        for j=1:12
            n = (el-1)*6 + i;
@@ -70,6 +70,6 @@ for el=1:7
    end
 end
 Kpb = zeros(beam_dofs, beam_dofs);        % initializing the beam Kstiff
-for el=1:7
+for el=1:nodes-1
     Kpb = Kpb + Kel_b(:,:, el);           % adding every positioned element
 end
